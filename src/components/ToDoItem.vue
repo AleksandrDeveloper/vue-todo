@@ -1,26 +1,16 @@
 <template>
-  <div class="container pt-5">
-    <form>
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input type="email" class="form-control" id="title" />
-      </div>
-
-      <div class="form-group">
-        <label for="text">Text</label>
-        <textarea class="form-control" id="text"></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <hr />
-
-    <ul class="list-group">
-      <li class="list-group-item" v-for="item in todoArr" :key="item.id">
-
-      </li>
-    </ul>
-  </div>
+   <li class="list-group-item">
+      {{title}} 
+      <span>
+        <strong>{{text}}</strong> 
+      </span> 
+      <br>
+      <button 
+      @click="delite(id)" 
+      class="btn btn-danger">
+        Delite
+      </button>
+   </li>
 </template>
 
 <script>
@@ -30,6 +20,7 @@ export default {
     title: String,
     text: String,
     id: Number,
+    delite:Function
   },
 };
 </script>
@@ -39,5 +30,5 @@ textarea {
   width: 100%;
   height: 200px;
 }
-</style>
+</style> 
 
